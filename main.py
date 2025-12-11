@@ -26,7 +26,7 @@ load_dotenv()
 # 페이지 기본 설정 & 스타일
 # =========================
 st.set_page_config(
-    page_title="imageking",
+    page_title="bulkking",
     page_icon="🎬",
     layout="wide",
 )
@@ -284,7 +284,7 @@ def create_video_from_scenes(
         return None, "NO_IMAGES"
 
     frames_per_scene = max(1, int(seconds_per_scene * fps))
-    output_path = "imageking_output.mp4"
+    output_path = "bulkking_output.mp4"
 
     try:
         writer = imageio.get_writer(output_path, fps=fps)  # imageio-ffmpeg 필요
@@ -382,7 +382,7 @@ st.markdown(
             <span class="emoji">🎬</span>
             <span>IASA</span>
         </div>
-        <div class="main-title">imageking</div>
+        <div class="main-title">bulkking</div>
         <div class="main-subtitle">
             대본을 입력하고, 문장별 프롬프트를 기반으로 이미지를 벌크로 생성한 뒤,
             장면들을 이어붙여 영상까지 자동으로 만들어보세요.
@@ -529,7 +529,7 @@ if st.session_state.get("video_bytes"):
     st.download_button(
         label="📥 영상 다운로드 (MP4)",
         data=st.session_state["video_bytes"],
-        file_name="imageking_output.mp4",
+        file_name="bulkking_output.mp4",
         mime="video/mp4",
     )
 elif st.session_state.get("video_error_msg"):
